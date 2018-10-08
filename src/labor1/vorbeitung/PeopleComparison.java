@@ -25,16 +25,16 @@ public class PeopleComparison {
 	/**
 	 * The method generates the intersection of the attribut peopleArray
 	 * 
-	 * @return returns a string array with the intersection
+	 * @return returns a string with the intersection
 	 */
-	public String[] findSuspects() {
+	public String findSuspects() {
 		String[] result = this.getIntersection(this.peopleArray[0], this.peopleArray[1]);
 		if (this.peopleArray.length > 2) {
 			for (int index = 2; index < this.peopleArray.length; index++) {
 				result = this.getIntersection(result, this.peopleArray[index]);
 			}
 		}
-		return result;
+		return this.toStringName(result);
 	}
 
 	/**
@@ -96,5 +96,27 @@ public class PeopleComparison {
 
 	public String[][] getPeopleArray() {
 		return peopleArray;
+	}
+
+	/**
+	 * The methode converts a String Array into a string
+	 * 
+	 * @param name
+	 *            String array with names
+	 * @return return a String with name the intersection
+	 */
+	private String toStringName(String[] name) {
+		String stringName = "Name der Verdächtigen: ";
+		if (name[0] == null) {
+			stringName += "keine Schnittmenge gefunden";
+		} else {
+			stringName += name[0];
+			for (int index = 1; name.length > index; index++) {
+				if (name[index] != null) {
+					stringName += ", " + name[index];
+				}
+			}
+		}
+		return stringName;
 	}
 }
