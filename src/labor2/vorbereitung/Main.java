@@ -7,7 +7,8 @@ import java.awt.Dimension;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
+/**
+ */
 public class Main {
 
 	public static void main(String[] args) {
@@ -19,7 +20,6 @@ public class Main {
 		window.setBackground(color);
 		//creates transparent JPanel for formatting
 		FormartPanel top = new FormartPanel(color, 200, 200);
-		
 		JPanel background = new JPanel();
 		background.setLayout(new BorderLayout());
 		//JPanel box is a BoxLayout
